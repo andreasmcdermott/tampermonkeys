@@ -104,5 +104,7 @@
   };
 
   const observer = new MutationObserver(updateUI);
-  observer.observe(document.getElementById('repo-content-turbo-frame'), {subtree: true, childList: true});
+  const node = document.getElementById('repo-content-turbo-frame');
+  if (!node) return
+  observer.observe(node, {subtree: true, childList: true});
 })();
